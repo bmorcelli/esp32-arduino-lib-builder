@@ -28,7 +28,7 @@ IDF_COMPS="$IDF_PATH/components"
 IDF_TOOLCHAIN="xtensa-$IDF_TARGET-elf"
 
 # Owner of the target ESP32 Arduino repository
-AR_USER="espressif"
+AR_USER="bmorcelli"
 
 # The full name of the repository
 AR_REPO="$AR_USER/arduino-esp32"

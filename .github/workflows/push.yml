@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: bash ./tools/prepare-ci.sh
     - name: Build Libs for ${{ matrix.target }}
-      run: bash ./build.sh -t ${{ matrix.target }}
+      run: bash ./build.sh -t ${{ matrix.target }} -I release/v4.4 -A idf-release/v4.4
     - name: Upload archive
       uses: actions/upload-artifact@v1
       with:

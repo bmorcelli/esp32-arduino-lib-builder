@@ -15,7 +15,7 @@ else
 	current_branch="$GITHUB_HEAD_REF"
 fi
 
-AR_BRANCH="master"
+AR_BRANCH="release/v3.3.x"
 if [[ "$current_branch" != "master" && `github_branch_exists "$AR_REPO" "$current_branch"` == "1" ]]; then
 	AR_BRANCH="$current_branch"
 else

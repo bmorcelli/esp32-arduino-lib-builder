@@ -6,7 +6,7 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(arduino-lib-builder)
 
 idf_build_get_property(elf EXECUTABLE GENERATOR_EXPRESSION)
-
+add_link_options("-Wl,-z,muldefs")
 add_custom_command(
 	OUTPUT "idf_libs" 
 	COMMAND ${CMAKE_SOURCE_DIR}/tools/copy-libs.sh ${IDF_TARGET} "${CONFIG_LIB_BUILDER_FLASHMODE}" "${CONFIG_SPIRAM_MODE_OCT}" "${CONFIG_IDF_TARGET_ARCH_XTENSA}"

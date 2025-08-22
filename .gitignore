@@ -1,6 +1,7 @@
 .DS_Store
 .vscode
 managed_components/
+launcherhub-app/node_modules/
 components/arduino/
 components/esp-dl/
 components/esp-sr/

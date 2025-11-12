@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - master
+    - master, bruce
   pull_request:
     paths:
       - "**"
@@ -71,7 +71,7 @@ jobs:
           mkdir -p out
           find dist -name 'arduino-esp32-libs-esp*.tar.gz' -exec tar zxvf {} -C out \;
           timestamp=$(date '+%Y%m%d-%H%M%S')
-          archive_name="esp32-arduino-libs-${timestamp}.zip"
+          archive_name="bruce_esp32-arduino-libs-${timestamp}.zip"
           archive_path="dist/${archive_name}"
           (
             cd out/tools/esp32-arduino-libs

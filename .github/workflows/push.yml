@@ -16,9 +16,9 @@ on:
       - "!tools/config_editor/**"
       - "!tools/docker/**"
 
-concurrency:
-  group: esp-idf-libs-${{github.event.pull_request.number || github.ref}}
-  cancel-in-progress: true
+#concurrency:
+  #group: esp-idf-libs-${{github.event.pull_request.number || github.ref}}
+  #cancel-in-progress: true
 
 jobs:
   build-libs:

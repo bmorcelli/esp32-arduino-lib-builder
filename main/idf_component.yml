@@ -16,8 +16,3 @@ dependencies:
     version: ">=1.4.2"
     rules:
       - if: "target in [esp32s3]"
-  espressif/esp_matter:
-    version: "1.4.1"
-    require: public
-    rules:
-      - if: "target not in [esp32c2, esp32p4]"

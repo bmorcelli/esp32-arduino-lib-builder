@@ -71,11 +71,11 @@ jobs:
           find dist -name 'arduino-esp32-libs-esp*.tar.gz' -exec tar zxvf {} -C out \;
           timestamp=$(date '+%Y%m%d-%H%M%S')
           branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-          archive_name="${branch_name}_esp32-arduino-libs-${timestamp}.zip"
+          archive_name="${branch_name}_esp32-arduino-libs-${timestamp}.tar.xz"
           archive_path="dist/${archive_name}"
           (
             cd out/tools/esp32-arduino-libs
-            zip -r "../../../${archive_path}" .
+            tar cJf "../../../${archive_path}" .
           )
           cp out/package_esp32_index.template.json dist/package_esp32_index.template.json
           echo "archive_name=${archive_name}" >> "${GITHUB_OUTPUT}"

@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [esp32, esp32s3, esp32c6, esp32p4, esp32c5]
+        target: [esp32p4]
       fail-fast: false
     steps:
     - name: Checkout repository

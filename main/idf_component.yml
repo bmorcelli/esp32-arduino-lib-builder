@@ -14,7 +14,9 @@ dependencies:
   espressif/esp_diag_data_store: "1.0.2"
   espressif/esp_diagnostics: "1.2.1"
   espressif/esp_encrypted_img: "2.1.0"
-  espressif/esp_hosted: "2.4.2"
+  espressif/esp_hosted:
+    git: https://github.com/espressif/esp-hosted-mcu.git
+    version: 68871f57872b49a556388ae3463cb4f64e0c5006 # Registry v2.4.2
   espressif/esp_insights: "1.2.2"
   espressif/esp_jpeg: "1.3.1"
   espressif/esp_modem: "1.4.0"

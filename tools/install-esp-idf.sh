@@ -14,6 +14,7 @@ fi
 if [ ! -d "$IDF_PATH" ]; then
 	echo "ESP-IDF is not installed! Installing local copy"
 	git clone $IDF_REPO_URL -b $IDF_BRANCH
+	if [ $? -ne 0 ]; then exit 1; fi
 	idf_was_installed="1"
 fi
 
@@ -49,3 +50,6 @@ fi
 #
 
 source $IDF_PATH/export.sh
+
+echo "Updating ESP-IDF component manager..."
+python3 -m pip install --upgrade idf-component-manager

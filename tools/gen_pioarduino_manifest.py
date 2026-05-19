@@ -26,6 +26,14 @@ def convert_version(version_string):
     if version_string == 'heads/master':
         return ".".join(("5", "5", "0")) #temporary
 
+    branch_match = re.search(
+        r"(?:heads/)?release/(?P<MAJOR>0|[1-9]\d*)\.(?P<MINOR>0|[1-9]\d*)",
+        version_string,
+    )
+    if branch_match:
+        major, minor = branch_match.groups()
+        return ".".join((major, minor, "0"))
+
     regex_pattern = (
         r"v(?P<MAJOR>0|[1-9]\d*)\.(?P<MINOR>0|[1-9]\d*)\.*(?P<PATCH>0|[1-9]\d*)*"
     )

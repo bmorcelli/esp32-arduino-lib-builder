@@ -46,3 +46,6 @@ if [ "$AR_BRANCH" ]; then
 	git -C "$AR_COMPS/arduino" pull --ff-only
 fi
 if [ $? -ne 0 ]; then exit 1; fi
+
+bash ./tools/patch-arduino.sh
+if [ $? -ne 0 ]; then exit 1; fi

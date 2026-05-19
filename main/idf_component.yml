@@ -1,42 +1,96 @@
 dependencies:
   # Required IDF version
   idf: ">=5.3"
-  chmorgan/esp-libhelix-mp3: "1.0.3"
-  espressif/cbor: "0.6.0~1"
+  chmorgan/esp-libhelix-mp3:
+    version: "1.0.3"
+    require: public
+  espressif/cbor:
+    version: "0.6.0~1"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   espressif/dl_fft: "0.3.1"
-  espressif/esp-dsp: "1.7.0"
-  espressif/esp-modbus: "1.0.18"
-  espressif/esp-nn: "1.1.2"
+  espressif/esp-dsp:
+    version: "1.7.0"
+    rules:
+      - if: "target != esp32c2"
+  espressif/esp-modbus:
+    version: "1.0.18"
+    require: public
+  espressif/esp-nn:
+    version: "1.1.2"
+    rules:
+      - if: "target != esp32c2"
   espressif/esp-serial-flasher: "0.0.11"
-  espressif/esp-zboss-lib: "1.6.4"
-  espressif/esp-zigbee-lib: "1.6.7"
+  espressif/esp-zboss-lib:
+    version: "1.6.4"
+    require: public
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
+  espressif/esp-zigbee-lib:
+    version: "1.6.7"
+    require: public
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   espressif/esp_delta_ota: "1.1.2"
-  espressif/esp_diag_data_store: "1.0.2"
-  espressif/esp_diagnostics: "1.2.1"
+  espressif/esp_diag_data_store:
+    version: "1.0.2"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
+  espressif/esp_diagnostics:
+    version: "1.2.1"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   espressif/esp_encrypted_img: "2.1.0"
   espressif/esp_hosted:
     git: https://github.com/espressif/esp-hosted-mcu.git
     version: 68871f57872b49a556388ae3463cb4f64e0c5006 # Registry v2.4.2
-  espressif/esp_insights: "1.2.2"
+    rules:
+      - if: "target == esp32p4"
+  espressif/esp_insights:
+    version: "1.2.2"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   espressif/esp_jpeg: "1.3.1"
   espressif/esp_modem: "1.4.0"
-  espressif/esp_rainmaker: "1.5.2"
+  espressif/esp_rainmaker:
+    version: "1.5.2"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   espressif/esp_rcp_update: "1.2.0"
   espressif/esp_schedule: "1.2.0"
   espressif/esp_secure_cert_mgr: "2.6.1"
   espressif/esp_serial_slave_link: "1.1.1~1"
-  espressif/esp_wifi_remote: "0.13.0"
+  espressif/esp_wifi_remote:
+    version: "0.13.0"
+    rules:
+      - if: "target == esp32p4"
   espressif/eppp_link: "1.1.2"
   espressif/jsmn: "1.1.0"
   espressif/json_generator: "1.1.2"
   espressif/json_parser: "1.0.3"
-  espressif/lan867x: "2.0.0"
+  espressif/lan867x:
+    version: "2.0.0"
+    rules:
+      - if: "target in [esp32, esp32p4]"
   espressif/lan86xx_common: "1.0.0"
-  espressif/libsodium: "1.0.20~2"
-  espressif/mdns: "1.8.2"
-  espressif/network_provisioning: "1.0.2"
-  espressif/qrcode: "0.1.0~2"
-  espressif/rmaker_common: "1.4.6"
+  espressif/libsodium:
+    version: "1.0.20~2"
+    require: public
+  espressif/mdns:
+    version: "1.8.2"
+    require: public
+  espressif/network_provisioning:
+    version: "1.0.2"
+    rules:
+      - if: "target != esp32c2"
+  espressif/qrcode:
+    version: "0.1.0~2"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
+  espressif/rmaker_common:
+    version: "1.4.6"
+    rules:
+      - if: "target not in [esp32c2, esp32p4]"
   joltwallet/littlefs: "1.20.1"
   espressif/esp32-camera:
     version: "master"
@@ -52,7 +106,7 @@ dependencies:
   espressif/esp-sr:
     version: "2.1.5"
     rules:
-      - if: "target in [esp32s3]"
+      - if: "target in [esp32s3, esp32p4]"
   espressif/esp_matter:
     version: "1.4.1"
     require: public

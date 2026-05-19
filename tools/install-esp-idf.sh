@@ -50,6 +50,3 @@ fi
 #
 
 source $IDF_PATH/export.sh
-
-echo "Updating ESP-IDF component manager..."
-python3 -m pip install --upgrade idf-component-manager
